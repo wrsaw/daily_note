@@ -239,6 +239,13 @@ public native String intern()
 
 valueOf和copyValueOf方法本质上相同
 String.valueOf和Integer.toString本质相同，前者调用后者实现
-String重载“+”运算符，使用StringBuilder的append()和toString()方法实现    
+String重载“+”运算符，使用StringBuilder的append()和toString()方法实现
+    
+String st1 = "hello";
+String st2 = "hello";
+System.out.println(st1 == st2); //true 都指向字符串常量池内容   
+    
+String s = new String("hollis");    
+若常量池中已经存在”hollis”，则直接引用，也就是此时只会创建一个对象，如果常量池中不存在”hollis”，则先创建后引用，也就是有两个 
 ```
 
