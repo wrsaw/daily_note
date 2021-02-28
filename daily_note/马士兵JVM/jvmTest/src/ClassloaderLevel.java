@@ -7,5 +7,8 @@ public class ClassloaderLevel {
 
         System.out.println(sun.net.spi.nameservice.dns.DNSNameService.class.getClassLoader().getClass().getClassLoader());
         System.out.println(ClassloaderLevel.class.getClassLoader().getClass().getClassLoader());
+
+        System.out.println(ClassloaderLevel.class.getClassLoader().getParent());
+        System.out.println(ClassloaderLevel.class.getClassLoader().getParent().getParent());
     }
 }
