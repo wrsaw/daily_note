@@ -1,7 +1,8 @@
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class HelloWorldTest {
+import static org.junit.Assert.assertEquals;
+
+public class HelloWorld2 {
 	@Test
 	public void testSayHello() {
 		HelloWorld helloworld = new HelloWorld();
