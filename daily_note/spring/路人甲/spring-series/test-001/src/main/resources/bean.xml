@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean id="helloWorld" class="HelloWorld"/>
+
+    <bean id="userModel1" class="UserModel"/>
+
+    <bean id="userModel2" class="UserModel">
+        <constructor-arg index="0" value="注入的"/>
+        <constructor-arg index="1" value="18"/>
+    </bean>
+
+    <bean id="userModelBuild1" class="UserModel" factory-method="build1"/>
+
+    <bean id="userModelBuild2" class="UserModel" factory-method="build2">
+        <constructor-arg index="0" value="注入的"/>
+        <constructor-arg index="1" value="18"/>
+    </bean>
+
+    <bean id="userModelBuild21" factory-bean="userModel1" factory-method="build21"/>
+
+    <bean id="userModelBuild22" factory-bean="userModel1" factory-method="build22">
+        <constructor-arg index="0" value="注入的"/>
+        <constructor-arg index="1" value="18"/>
+    </bean>
+</beans>
