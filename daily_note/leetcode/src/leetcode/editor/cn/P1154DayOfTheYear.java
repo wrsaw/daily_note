@@ -56,10 +56,23 @@ class Solution {
         String[] arr = date.split("-");
         int[] numArr = new int[]{0,31,60,91,121,152,182,213,244,274,305,335};
         int ans = numArr[Integer.valueOf(arr[1]) - 1] + Integer.valueOf(arr[2]);
-        if (Integer.valueOf(arr[1]) > 2 && Integer.valueOf(arr[0]) % 4 != 0) {
+        if (Integer.valueOf(arr[1]) > 2 && !checkYear(Integer.valueOf(arr[0]))) {
             return ans - 1;
         }
         return ans;
+    }
+
+    private boolean checkYear(int year) {
+        if (year % 4 != 0) {
+            return false;
+        }
+        if (year % 400 == 0) {
+            return true;
+        }
+        if (year % 100 == 0) {
+            return false;
+        }
+        return true;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
